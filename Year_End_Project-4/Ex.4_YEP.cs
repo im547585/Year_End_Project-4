@@ -2,11 +2,11 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void MainMenu()
         {
             Console.WriteLine("Здравейте, моля изберете една от следните опции: \n\t" +
                 "1. Добавяне на книга/и\n\t" +
-                "2. Търсене на книга\n\t"+
+                "2. Търсене на книга\n\t" +
                 "3. Редактиране на книга/и\n\t" +
                 "4. Изтриване на книга/и \n\t" +
                 "5. Сортиране на книга/и\n\t" +
@@ -17,6 +17,16 @@
                 "0. ИЗХОД ОТ ПРОГРАМАТА\n\t");
             Console.Write("ИЗБОР: ");
             int Choice = int.Parse(Console.ReadLine());
+        }
+        
+        static void Main(string[] args)
+        {
+            //>>> Messages <<<//
+            List<string> ReadyMessagesInfo = new List<string>();
+            ReadyMessagesInfo.Add("Моля, имайте предвид, че при изход от програмата данните ще се изтрият!");
+            //>>> Messages <<<//
+
+            Console.WriteLine(ReadyMessagesInfo[0]);
         }
     }
 }

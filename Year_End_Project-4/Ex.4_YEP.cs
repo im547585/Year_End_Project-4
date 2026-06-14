@@ -476,31 +476,9 @@ namespace Year_End_Project_4
             
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         static void Main(string[] args)
         {
             MainMenu();
-            ////>>> Messages <<<//
-            //List<string> ReadyMessagesInfo = new List<string>();
-            //ReadyMessagesInfo.Add("Моля, имайте предвид, че при изход от програмата данните ще се изтрият!");
-            ////>>> Messages <<<//
-            //Console.WriteLine(ReadyMessagesInfo[0]);
-            
         }
     }
 }

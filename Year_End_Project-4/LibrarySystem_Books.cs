@@ -28,6 +28,9 @@
         //--
         private List<int> year_of_publishingl = new List<int>();
         public List<int> Year_Of_PublishingL { get { return year_of_publishingl; } set; } = new List<int>();
+        //--
+        //private List<string> old_data = new List<string>();
+        //public List<string> Old_DataL { get { return old_data; } set; } = new List<string>();
         // LISTOVE//
 
         public string Book_Name
@@ -40,7 +43,7 @@
                 {
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("!!>>>Полето не може да остане празно!<<<!!");
+                    Console.WriteLine("Полето не може да остане празно!");
                     Console.ResetColor();
                 }
                 else
@@ -58,7 +61,7 @@
                 {
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("!!>>>Полето не може да остане празно!<<<!!");
+                    Console.WriteLine("Полето не може да остане празно!");
                     Console.ResetColor();
                 }
                 else
@@ -76,7 +79,7 @@
                 {
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("!!>>>Полето не може да остане празно!<<<!!");
+                    Console.WriteLine("Полето не може да остане празно!");
                     Console.ResetColor();
                 }
                 else
@@ -94,14 +97,14 @@
                 {
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("!!>>>Полето не може да остане празно!<<<!!");
+                    Console.WriteLine("Полето не може да остане празно!");
                     Console.ResetColor();
                 }
                 else if (value < 999 || value > 9999)
                 {
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("!!>>>Годината ба издаване трябва да е 4 цифрено число!<<<!!");
+                    Console.WriteLine("Годината ба издаване трябва да е 4 цифрено число!");
                     Console.ResetColor();
                 }
                 else
@@ -119,14 +122,14 @@
                 {
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("!!>>>Полето не може да остане празно!<<<!!");
+                    Console.WriteLine("Полето не може да остане празно!");
                     Console.ResetColor();
                 }
                 else if (value < 0)
                 {
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("!!>>>№ от каталога трябва да е валиден!<<<!!");
+                    Console.WriteLine("№ от каталога трябва да е валиден!");
                     Console.ResetColor();
                 }
                 else
@@ -142,7 +145,7 @@
                 {
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("!!>>>Полето не може да остане празно!<<<!!");
+                    Console.WriteLine("Полето не може да остане празно!");
                     Console.ResetColor();
                 }
                 else

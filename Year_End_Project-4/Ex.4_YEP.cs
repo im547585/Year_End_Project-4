@@ -15,18 +15,15 @@ namespace Year_End_Project_4
                 "3. Редактиране на книга/и\n\t" +
                 "4. Изтриване на книга/и \n\t" +
                 "5. Сортиране на книга/и\n\t" +
-                "6. Създаване на личен картон \n\t" +
-                "7. Регистриране на заета книга\n\t" +
-                "8. Преглед на личен картон\n\t" +
-                "9. Изтриване на личен картон\n\t" +
-                "10. Показване на всички книги\n\t" +
+                "6. Показване на всички книги\n\t" +
                 "0. ИЗХОД ОТ ПРОГРАМАТА\n\t");
             Console.ResetColor();
             Console.Write("ИЗБОР: ");
             int Choice = int.Parse(Console.ReadLine());
             if (Choice == 1){ Console.Clear(); AddBook();}
             else if (Choice == 2) { Console.Clear(); SearchBook(); }
-            else if (Choice == 10) { Console.Clear(); ShowAllBooks(); }
+            else if (Choice ==3) { Console.Clear(); EditBook(); }
+            else if (Choice == 6) { Console.Clear(); ShowAllBooks(); }
             else if (Choice == 0) {ExitProgram();}
         }
 
@@ -111,11 +108,11 @@ namespace Year_End_Project_4
             
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine($">>>УСПЕШЕНO ДОБАВИХТЕ СЛЕДНИТЕ КНИГИ: <<<");
+                Console.WriteLine($"УСПЕШЕНO ДОБАВИХТЕ СЛЕДНИТЕ КНИГИ:");
                 Console.ResetColor();
-            Console.WriteLine("___________________________________________________________________________________________________________________");
-            Console.WriteLine("| Име на книгата        | Автор на книгата    | Издателство                   | № в каталога | Жанр/Тип           |");
-            Console.WriteLine("-------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("________________________________________________________________________________________________________________________________________");
+            Console.WriteLine("| Име на книгата        | Автор на книгата    | Издателство                   | Година на издаване | № в каталога | Жанр/Тип           |");
+            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
 
             for (int i = 0; i < Choice; i++)
             {
@@ -123,10 +120,10 @@ namespace Year_End_Project_4
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write($"{NewBook.BookNamesL[i],-21}");
                 Console.ResetColor();
-                Console.WriteLine($" | {NewBook.AuthorsL[i],-19} | {NewBook.Publishing_HousesL[i],-29} | {NewBook.No_Of_Book_From_CatalogueL[i],-12} | {NewBook.GenreL[i],-18} |");
+                Console.WriteLine($" | {NewBook.AuthorsL[i],-19} | {NewBook.Publishing_HousesL[i],-29} | {NewBook.Year_Of_PublishingL[i],-18} | {NewBook.No_Of_Book_From_CatalogueL[i],-12} | {NewBook.GenreL[i],-18} |");
             }
 
-            Console.WriteLine("___________________________________________________________________________________________________________________");
+            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
 
             Console.WriteLine("Искате ли да добавите друга/и книга/и? ДА/НЕ");
             string Choice1 = Console.ReadLine().ToUpperInvariant();
@@ -163,15 +160,15 @@ namespace Year_End_Project_4
                 int i = NewBook.BookNamesL.FindIndex(x => x.Equals(Search1, StringComparison.OrdinalIgnoreCase));
                 if (i != -1)
                 {
-                    Console.WriteLine("___________________________________________________________________________________________________________________");
-                    Console.WriteLine("| Име на книгата        | Автор на книгата    | Издателство                   | № в каталога | Жанр/Тип           |");
-                    Console.WriteLine("-------------------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine("________________________________________________________________________________________________________________________________________");
+                    Console.WriteLine("| Име на книгата        | Автор на книгата    | Издателство                   | Година на издаване | № в каталога | Жанр/Тип           |");
+                    Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
                     Console.Write("| ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write($"{NewBook.BookNamesL[i],-21}");
                     Console.ResetColor();
-                    Console.WriteLine($" | {NewBook.AuthorsL[i],-19} | {NewBook.Publishing_HousesL[i],-29} | {NewBook.No_Of_Book_From_CatalogueL[i],-12} | {NewBook.GenreL[i],-18} |");
-                    Console.WriteLine("___________________________________________________________________________________________________________________");
+                    Console.WriteLine($" | {NewBook.AuthorsL[i],-19} | {NewBook.Publishing_HousesL[i],-29} | {NewBook.Year_Of_PublishingL[i],-18} | {NewBook.No_Of_Book_From_CatalogueL[i],-12} | {NewBook.GenreL[i],-18} |");
+                    Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
                 }
                 else
                 {
@@ -423,18 +420,18 @@ namespace Year_End_Project_4
             {
                 for (int i = 0; i < NewBook.BookNamesL.Count; i++)
                 {
-                    Console.WriteLine("___________________________________________________________________________________________________________________");
-                    Console.WriteLine("| Име на книгата        | Автор на книгата    | Издателство                   | № в каталога | Жанр/Тип           |");
-                    Console.WriteLine("-------------------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine("________________________________________________________________________________________________________________________________________");
+                    Console.WriteLine("| Име на книгата        | Автор на книгата    | Издателство                   | Година на издаване | № в каталога | Жанр/Тип           |");
+                    Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
                     Console.Write("| ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write($"{NewBook.BookNamesL[i],-21}");
                     Console.ResetColor();
-                    Console.WriteLine($" | {NewBook.AuthorsL[i],-19} | {NewBook.Publishing_HousesL[i],-29} | {NewBook.No_Of_Book_From_CatalogueL[i],-12} | {NewBook.GenreL[i],-18} |");
-                    Console.WriteLine("___________________________________________________________________________________________________________________");
+                    Console.WriteLine($" | {NewBook.AuthorsL[i],-19} | {NewBook.Publishing_HousesL[i],-29} | {NewBook.Year_Of_PublishingL[i],-18} | {NewBook.No_Of_Book_From_CatalogueL[i],-12} | {NewBook.GenreL[i],-18} |");
+                    Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
                     Console.BackgroundColor = ConsoleColor.DarkCyan;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("ИСКАТЕ ЛИ ДА СЕ ВЪРНЕТЕ В ГЛАВНОТО МЕНЮ?");
+                    Console.WriteLine("ИСКАТЕ ЛИ ДА СЕ ВЪРНЕТЕ В ГЛАВНОТО МЕНЮ? ДА/НЕ");
                     Console.ResetColor();
                     Console.Write("ИЗБОР: ");
                     string Choice1 = Console.ReadLine().ToUpperInvariant();
@@ -474,6 +471,123 @@ namespace Year_End_Project_4
                 }
             }
             
+        }
+
+        static void EditBook()
+        {
+            MenuHeader();
+            Console.Write("Въведете заглавие, за да редактирате книгата: ");
+            string answer = Console.ReadLine();
+            int i = NewBook.BookNamesL.FindIndex(x => x.Equals(answer, StringComparison.OrdinalIgnoreCase));
+            if (i != -1)
+            {
+                Console.WriteLine("________________________________________________________________________________________________________________________________________");
+                Console.WriteLine("| Име на книгата        | Автор на книгата    | Издателство                   | Година на издаване | № в каталога | Жанр/Тип           |");
+                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
+                Console.Write("| ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write($"{NewBook.BookNamesL[i],-21}");
+                Console.ResetColor();
+                Console.WriteLine($" | {NewBook.AuthorsL[i],-19} | {NewBook.Publishing_HousesL[i],-29} | {NewBook.Year_Of_PublishingL[i],-18} | {NewBook.No_Of_Book_From_CatalogueL[i],-12} | {NewBook.GenreL[i],-18} |");
+                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
+
+                Console.BackgroundColor= ConsoleColor.DarkCyan;
+                Console.ForegroundColor= ConsoleColor.White;
+                Console.WriteLine("Изберете параметър на книгата, която искате да редактирате: \n\t" +
+                    "1. Име \n\t" +
+                    "2. Автор \n\t" +
+                    "3. Издателство \n\t" +
+                    "4. № в каталог \n\t" +
+                    "5. Жанр/Тип");
+                Console.ResetColor();
+                Console.Write("ИЗБОР: ");
+                int Choice = int.Parse(Console.ReadLine());
+                if(Choice == 1)
+                {
+                    Console.Write($"Въведете ново име на книгата: ");
+                    NewBook.Book_Name = Console.ReadLine().ToUpperInvariant();
+                    NewBook.BookNamesL.Insert(0, NewBook.Book_Name);
+                    if (NewBook.Book_Name == NewBook.BookNamesL[0]) {
+                        Console.BackgroundColor = ConsoleColor.DarkGreen;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine($"УСПЕШЕНO РЕДАКТИРАХТЕ КНИГАТА!");
+                        Console.ResetColor();
+                        Console.WriteLine("________________________________________________________________________________________________________________________________________");
+                        Console.WriteLine("| Име на книгата        | Автор на книгата    | Издателство                   | Година на издаване | № в каталога | Жанр/Тип           |");
+                        Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
+                        Console.Write("| ");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write($"{NewBook.BookNamesL[i],-21}");
+                        Console.ResetColor();
+                        Console.WriteLine($" | {NewBook.AuthorsL[i],-19} | {NewBook.Publishing_HousesL[i],-29} | {NewBook.Year_Of_PublishingL[i],-18} | {NewBook.No_Of_Book_From_CatalogueL[i],-12} | {NewBook.GenreL[i],-18} |");
+                        Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
+                        Console.BackgroundColor = ConsoleColor.DarkCyan;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("Искате ли да редактирате друга книга? ДА/НЕ");
+                        string answer2 = Console.ReadLine().ToUpperInvariant();
+                        if(answer2 == "ДА")
+                        {
+                            Console.Clear();
+                            EditBook();
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            MainMenu();
+                        }
+                    }
+                    else
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("НЕ Е ОТКРИТА КНИГА, С ГОРЕПОСОЧЕН КРИТЕРИЙ! \n" +
+                            "МОЛЯ, ПРОВЕРЕТЕ НАПИСАНОТО/ИЗБРАНОТО ОТ ВАС.\n");
+                        Console.ResetColor();
+                        Console.BackgroundColor = ConsoleColor.DarkCyan;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("ИСКАТЕ ЛИ ДА ТЪРСИТЕ ОТНОВО? ДА/НЕ");
+                        Console.ResetColor();
+                        Console.Write("ИЗБОР: ");
+                        string Choice1 = Console.ReadLine().ToUpperInvariant();
+                        if (Choice1 == "ДА")
+                        {
+                            Console.Clear();
+                            EditBook();
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            MainMenu();
+                        }
+                    }
+                }
+
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("НЕ Е ОТКРИТА КНИГА, С ГОРЕПОСОЧЕН КРИТЕРИЙ! \n" +
+                    "МОЛЯ, ПРОВЕРЕТЕ НАПИСАНОТО/ИЗБРАНОТО ОТ ВАС.\n");
+                Console.ResetColor();
+                Console.BackgroundColor = ConsoleColor.DarkCyan;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("ИСКАТЕ ЛИ ДА ВЪВЕДЕТЕ ОТНОВО? ДА/НЕ");
+                Console.ResetColor();
+                Console.Write("ИЗБОР: ");
+                string Choice1 = Console.ReadLine().ToUpperInvariant();
+                if (Choice1 == "ДА")
+                {
+                    Console.Clear();
+                    EditBook();
+                }
+                else
+                {
+                    Console.Clear();
+                    MainMenu();
+                }
+
+            }
         }
 
         static void Main(string[] args)

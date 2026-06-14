@@ -259,5 +259,20 @@ namespace Year_End_Project_4
             this.Author_Of_Returned_Book = author_of_returned_book;
             this.Name_Of_Returned_Book = name_of_returned_book;
         }
+
+        public LibrarySystem_Reader()
+        {
+            this.No_Of_Personal_Card = 1;
+            this.Names_Of_Reader = "Иван Т. Читател";
+            this.Egn = 1042110000;
+            this.Adress = "с. Розино, ул. П. Р. Славейков №2";
+            this.Phone_Number = "+359889242110";
+            this.Age_Of_Reader = 16;
+            this.Date_Of_Creating_Personal_Card = "14.06.2026 г.";
+            this.Date_Of_Returning_The_Book = "18.08.2026 г.";
+            this.No_Of_Returned_Book_From_Catalogue = 1;
+            this.Author_Of_Returned_Book = "Doctor";
+            this.Name_Of_Returned_Book = "Neurosurgery";
+        }
     }
 }

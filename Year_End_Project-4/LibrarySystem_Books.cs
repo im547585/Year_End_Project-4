@@ -2,6 +2,7 @@
 {
     internal class LibrarySystem_Books
     {
+        private List<string> booknames = new List<string>();
         private string book_name; //**
         private string author; //**
         private string publishing_house;//**
@@ -9,13 +10,13 @@
         private int no_of_book_from_catalogue; //**
         private string genre; //**
         
-
+        public List<string> BookNames { get { return booknames; } set; } = new List<string>();
         public string Book_Name
-        {
+        { 
             get { return book_name; }
             set
             {
-                List<string> AddBooks = new List<string>();
+                
                 if (value == null)
                 {
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;
@@ -140,8 +141,19 @@
             this.Year_Of_Publishing = year_of_publishing;
             this.No_Of_Book_From_Catalogue = no_of_book_from_catalogue;
             this.Genre = genre;
-        } 
-        //private int AverageAgeOfBooks(int age)
+        }
+     
+        public LibrarySystem_Books()
+        {
+            this.Book_Name = "Neurosurgery";
+            this.Author = "Doctor";
+            this.Publishing_House = "Prosveta";
+            this.Year_Of_Publishing = 1998;
+            this.No_Of_Book_From_Catalogue = 1;
+            this.Genre = "General neurosurgery";
+        }
+
+        //public int AverageAgeOfBooks(int age)
         //{
         //    age = 2026 - year_of_publishing;
         //    return age;

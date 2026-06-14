@@ -15,6 +15,7 @@
             get { return book_name; }
             set
             {
+                List<string> AddBooks = new List<string>();
                 if (value == null)
                 {
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;

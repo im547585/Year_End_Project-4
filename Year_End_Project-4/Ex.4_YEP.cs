@@ -22,16 +22,10 @@ namespace Year_End_Project_4
             Console.ResetColor();
             Console.Write("ИЗБОР: ");
             int Choice = int.Parse(Console.ReadLine());
-            if (Choice == 1)
-            {
-                Console.Clear();
-                AddBook();
+            if (Choice == 1){ Console.Clear(); AddBook();}
+            else if (Choice == 2) { Console.Clear(); SearchBook(); }
+            else if (Choice == 0) {ExitProgram();}
             }
-            else if (Choice == 0)
-            {
-                ExitProgram();
-            }
-        }
 
         static void ExitProgram()
         {

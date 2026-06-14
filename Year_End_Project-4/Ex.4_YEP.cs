@@ -51,7 +51,7 @@ namespace Year_End_Project_4
             }
         }
 
-        static void AddBook()
+        static void MenuHeader()
         {
             Console.BackgroundColor = ConsoleColor.DarkCyan;
             Console.ForegroundColor = ConsoleColor.White;
@@ -64,6 +64,11 @@ namespace Year_End_Project_4
                 Console.Clear();
                 MainMenu();
             }
+        }
+
+        static void AddBook()
+        {
+            
             Console.Write("Колко книги ще добавите?: ");
             LibrarySystem_Books NewBook = new LibrarySystem_Books();
             int Choice = int.Parse(Console.ReadLine());

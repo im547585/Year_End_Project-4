@@ -25,6 +25,9 @@
         //--
         private List<string> genrel = new List<string>();
         public List<string> GenreL { get { return genrel; } set; } = new List<string>();
+        //--
+        private List<int> year_of_publishingl = new List<int>();
+        public List<int> Year_Of_PublishingL { get { return year_of_publishingl; } set; } = new List<int>();
         // LISTOVE//
 
         public string Book_Name

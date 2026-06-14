@@ -2,15 +2,31 @@
 {
     internal class LibrarySystem_Books
     {
-        private List<string> booknames = new List<string>();
+        
         private string book_name; //**
         private string author; //**
         private string publishing_house;//**
         private int year_of_publishing; //**
         private int no_of_book_from_catalogue; //**
         private string genre; //**
-        
-        public List<string> BookNames { get { return booknames; } set; } = new List<string>();
+
+        // LISTOVE //
+        private List<string> booknamesl = new List<string>();
+        public List<string> BookNamesL { get { return booknamesl; } set; } = new List<string>();
+        //--
+        private List<string> authorsl = new List<string>();
+        public List<string> AuthorsL { get { return authorsl ; } set; } = new List<string>();
+        //--
+        private List<string> publishing_housesl  = new List<string>();
+        public List<string> Publishing_HousesL { get { return publishing_housesl; } set; } = new List<string>();
+        //--
+        private List<int> no_of_book_from_cataloguel = new List<int>();
+        public List<int> No_Of_Book_From_CatalogueL { get { return no_of_book_from_cataloguel; } set; } = new List<int>();
+        //--
+        private List<string> genrel = new List<string>();
+        public List<string> GenreL { get { return genrel; } set; } = new List<string>();
+        // LISTOVE//
+
         public string Book_Name
         { 
             get { return book_name; }

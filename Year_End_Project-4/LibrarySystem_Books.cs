@@ -29,6 +29,8 @@
         private List<int> year_of_publishingl = new List<int>();
         public List<int> Year_Of_PublishingL { get { return year_of_publishingl; } set; } = new List<int>();
         //--
+        private List<int> average_age = new List<int>();
+        public List<int> Average_Age { get { return average_age; } set; } = new List<int>();
         //private List<string> old_data = new List<string>();
         //public List<string> Old_DataL { get { return old_data; } set; } = new List<string>();
         // LISTOVE//
@@ -174,11 +176,46 @@
             this.No_Of_Book_From_Catalogue = 1;
             this.Genre = "General neurosurgery";
         }
+        
+        private int averageageofbooks(int averageAge)
+        {
+            int totalAge = 0;
+            for (int i = 0; i < Year_Of_PublishingL.Count; i++)
+            {
+                totalAge += 2026 - Year_Of_PublishingL[i];
+            }
+            averageAge = totalAge / Year_Of_PublishingL.Count;
+            if (averageAge < 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return averageAge;
+            }
+            
+        }
 
-        //public int AverageAgeOfBooks(int age)
-        //{
-        //    age = 2026 - year_of_publishing;
-        //    return age;
-        //}
+        public int AverageAgeOfBooks { 
+            get {  return averageageofbooks(1);  } set { averageageofbooks(value); }
+        }
+
+        private int oldestbook()
+        {
+            int oldestBookYOP = Year_Of_PublishingL.Min();
+
+            int index = Year_Of_PublishingL.IndexOf(oldestBookYOP);
+            string nameOfOldestBook = BookNamesL[index];
+            Console.BackgroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine($"НАЙ-СТАРА КНИГА: {nameOfOldestBook}, {oldestBookYOP}");
+            Console.ResetColor();
+            return oldestBookYOP;
+        }
+        public int OldestBook
+        {
+            get { return oldestbook(1); }
+            set { oldestbook(value); }
+        }
     }
 }

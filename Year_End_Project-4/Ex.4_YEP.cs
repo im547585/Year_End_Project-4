@@ -25,7 +25,6 @@
             List<string> ReadyMessagesInfo = new List<string>();
             ReadyMessagesInfo.Add("Моля, имайте предвид, че при изход от програмата данните ще се изтрият!");
             //>>> Messages <<<//
-
             Console.WriteLine(ReadyMessagesInfo[0]);
         }
     }

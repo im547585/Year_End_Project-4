@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
-
-namespace Year_End_Project_4
+﻿namespace Year_End_Project_4
 {
     internal class LibrarySystem
     {
@@ -86,9 +81,16 @@ namespace Year_End_Project_4
                     Console.WriteLine("!!>>>Полето не може да остане празно!<<<!!");
                     Console.ResetColor();
                 }
+                else if(value < 999 || value > 9999)
+                {
+                    Console.BackgroundColor = ConsoleColor.DarkMagenta;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("!!>>>Годината ба издаване трябва да е 4 цифрено число!<<<!!");
+                    Console.ResetColor();
+                }
                 else
                 {
-                    book_name = value;
+                    year_of_publishing = value;
                 }
             }
         }

@@ -63,7 +63,14 @@ namespace Year_End_Project_4
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("МОЛЯ, ИМАЙТРЕ ПРЕДВИД, ЧЕ ПРИ ИЗХОД ОТ ПРОГРАМА ВСИЧКО ЩЕ СЕ ИЗТРИЕ!");
             Console.ResetColor();
-            Console.WriteLine("Колко книги ще добавите?: ");
+            Console.WriteLine("За да се върнете назад, натиснете 'Esc'.");
+            var pressedKey = Console.ReadKey();
+            if(pressedKey.Key == ConsoleKey.Escape)
+            {
+                Console.Clear();
+                MainMenu();
+            }
+            Console.Write("Колко книги ще добавите?: ");
             LibrarySystem_Books NewBook = new LibrarySystem_Books();
             int Choice = int.Parse(Console.ReadLine());
             for (int i = 0; i < Choice; i++)

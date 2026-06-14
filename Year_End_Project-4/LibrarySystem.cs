@@ -16,7 +16,7 @@
         private int age_of_reader; //**
         private string date_of_creating_personal_card; //**
         private string date_of_returning_the_book; //**
-        private string no_of_returned_book_from_catalogue; //**
+        private int no_of_returned_book_from_catalogue; //**
         private string author_of_returned_book; //**
         private string name_of_returned_book; //**
 
@@ -57,7 +57,7 @@
             }
         }
         public string Publishing_House
-            {
+        {
             get { return publishing_house; }
             set
             {
@@ -345,5 +345,26 @@
             }
         }
 
+        public LibrarySystem(string book_name, string author, string publishing_house, int year_of_publishing, int no_of_book_from_catalogue, string genre, int no_of_personal_card, string names_of_reader, long egn, string adress, string phone_number, int age_of_reader, string date_of_creating_personal_card, string date_of_returning_the_book, int no_of_returned_book_from_catalogue, string author_of_returned_book, string name_of_returned_book)
+        {
+            this.Book_Name = book_name;
+            this.Author = author;
+            this.Publishing_House = publishing_house;
+            this.Year_Of_Publishing = year_of_publishing;
+            this.No_Of_Book_From_Catalogue = no_of_book_from_catalogue;
+            this.Genre = genre;
+            this.No_Of_Personal_Card = no_of_personal_card;
+            this.Names_Of_Reader = names_of_reader;
+            this.Egn = egn;
+            this.Adress = adress;
+            this.Phone_Number = phone_number;
+            this.Age_Of_Reader = age_of_reader;
+            this.Date_Of_Creating_Personal_Card = date_of_creating_personal_card;
+            this.Date_Of_Returning_The_Book = date_of_returning_the_book;
+            this.No_Of_Returned_Book_From_Catalogue = no_of_returned_book_from_catalogue;
+            this.Author_Of_Returned_Book = author_of_returned_book;
+            this.Name_Of_Returned_Book = name_of_returned_book;
+
+        } 
     }
 }

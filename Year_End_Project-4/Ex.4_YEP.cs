@@ -87,43 +87,58 @@
         {
             MenuHeader();
             Console.Write("Колко книги ще добавите?: ");
-            int Choice = int.Parse(Console.ReadLine());
-            for (int i = 0; i < Choice; i++)
+            int Choice2 = int.Parse(Console.ReadLine());
+            int startNumber = NewBook.BookNamesL.Count;
+            for (int i = 0; i < Choice2; i++)
             {
-                Console.Write($"Име на книгата (#{i + 1}): ");
+                Console.Write($"Име на книгата (#{startNumber + i + 1}): ");
                 NewBook.Book_Name = Console.ReadLine().ToUpperInvariant();
                 NewBook.BookNamesL.Add(NewBook.Book_Name);
-                Console.Write($"Автор на книгата (#{i + 1}): ");
+                Console.Write($"Автор на книгата (#{startNumber + i + 1}): ");
                 NewBook.Author = Console.ReadLine().ToUpperInvariant();
                 NewBook.AuthorsL.Add(NewBook.Author);
-                Console.Write($"Издателство (#{i + 1}): ");
+                Console.Write($"Издателство (#{startNumber + i + 1}): ");
                 NewBook.Publishing_House = Console.ReadLine().ToUpperInvariant();
                 NewBook.Publishing_HousesL.Add(NewBook.Publishing_House);
-                Console.Write($"Година на издаване (#{i + 1}): ");
+                Console.Write($"Година на издаване (#{startNumber + i + 1}): ");
                 NewBook.Year_Of_Publishing = int.Parse(Console.ReadLine());
                 NewBook.Year_Of_PublishingL.Add(NewBook.Year_Of_Publishing);
                 Console.Write($"№ в каталога (#{NewBook.No_Of_Book_From_Catalogue}): ");
                 NewBook.No_Of_Book_From_Catalogue = int.Parse(Console.ReadLine());
                 NewBook.No_Of_Book_From_CatalogueL.Add(NewBook.No_Of_Book_From_Catalogue);
-                Console.Write($"Жанр/Тип (#{i + 1}): ");
+                Console.Write($"Жанр/Тип (#{startNumber + i + 1}): ");
                 NewBook.Genre = Console.ReadLine().ToUpperInvariant();
                 NewBook.GenreL.Add(NewBook.Genre);
                 Console.WriteLine("------------");
             }
 
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine($"УСПЕШЕНO ДОБАВИХТЕ СЛЕДНИТЕ КНИГИ КЪМ ДРУГИТЕ:");
+            Console.WriteLine($"УСПЕШЕНO ДОБАВИХТЕ СЛЕДНИТЕ КНИГИ:");
             Console.ResetColor();
+            Console.WriteLine("________________________________________________________________________________________________________________________________________");
+            Console.WriteLine("| Име на книгата        | Автор на книгата    | Издателство                   | Година на издаване | № в каталога | Жанр/Тип           |");
+            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
 
-            ShowAllBooks(); ///////////////////////////
+            for (int i = 0; i < Choice2; i++)
+            {
+                int no = startNumber + i;
+                Console.Write("| ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write($"{NewBook.BookNamesL[no],-21}");
+                Console.ResetColor();
+                Console.WriteLine($" | {NewBook.AuthorsL[no],-19} | {NewBook.Publishing_HousesL[no],-29} | {NewBook.Year_Of_PublishingL[no],-18} | {NewBook.No_Of_Book_From_CatalogueL[no],-12} | {NewBook.GenreL[no],-18} |");
+            }
+
+            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
 
             Console.WriteLine("Искате ли да добавите друга/и книга/и? ДА/НЕ");
             string Choice1 = Console.ReadLine().ToUpperInvariant();
             if (Choice1 == "ДА")
             {
-
-                AddBook();
+                
+                    Console.Clear();
+                    AddBook();
             }
             else
             {
@@ -1585,5 +1600,7 @@
         {
             MainMenu();
         }
+            
     }
+
 }

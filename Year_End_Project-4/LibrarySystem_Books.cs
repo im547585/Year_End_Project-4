@@ -106,7 +106,7 @@
                 {
                     Console.BackgroundColor = ConsoleColor.DarkMagenta;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("Годината ба издаване трябва да е 4 цифрено число!");
+                    Console.WriteLine("Годината на издаване трябва да е 4 цифрено число!");
                     Console.ResetColor();
                 }
                 else
@@ -214,8 +214,7 @@
         }
         public int OldestBook
         {
-            get { return oldestbook(1); }
-            set { oldestbook(value); }
+            get { return oldestbook(); }
         }
     }
 }

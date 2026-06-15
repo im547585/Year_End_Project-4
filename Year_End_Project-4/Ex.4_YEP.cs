@@ -1018,7 +1018,7 @@
         static void DeleteBook()
         {
             MenuHeader();
-            Console.Write("Въведете заглавие, за да редактирате книгата или част от нея: ");
+            Console.Write("Въведете заглавие, за да изтриете книгата или част от нея: ");
             string answer = Console.ReadLine();
             int i = NewBook.BookNamesL.FindIndex(x => x.Equals(answer, StringComparison.OrdinalIgnoreCase));
             if (i != -1)
@@ -1052,9 +1052,8 @@
                 int Choice = int.Parse(Console.ReadLine());
                 if (Choice == 1)
                 {
-                    NewBook.Book_Name = "";//
-                    NewBook.BookNamesL.Insert(0, NewBook.Book_Name);
-                    if (NewBook.Book_Name == NewBook.BookNamesL[0])
+                    NewBook.BookNamesL[i] = "";
+                    if (NewBook.Book_Name != NewBook.BookNamesL[0])
                     {
                         Console.BackgroundColor = ConsoleColor.DarkGreen;
                         Console.ForegroundColor = ConsoleColor.White;
@@ -1112,10 +1111,8 @@
                 }
                 else if (Choice == 2)
                 {
-
-                    NewBook.Author = "";
-                    NewBook.AuthorsL.Insert(0, NewBook.Author);
-                    if (NewBook.Author == NewBook.AuthorsL[0])
+                    NewBook.AuthorsL[i] = "";
+                    if (NewBook.Author != NewBook.AuthorsL[0])
                     {
                         Console.BackgroundColor = ConsoleColor.DarkGreen;
                         Console.ForegroundColor = ConsoleColor.White;
@@ -1173,9 +1170,8 @@
                 }
                 else if (Choice == 3)
                 {
-                    NewBook.Publishing_House = "";
-                    NewBook.Publishing_HousesL.Insert(0, NewBook.Publishing_House);
-                    if (NewBook.Publishing_House == NewBook.Publishing_HousesL[0])
+                    NewBook.Publishing_HousesL[i] = "";
+                    if (NewBook.Publishing_House != NewBook.Publishing_HousesL[0])
                     {
                         Console.BackgroundColor = ConsoleColor.DarkGreen;
                         Console.ForegroundColor = ConsoleColor.White;
@@ -1234,9 +1230,9 @@
                 else if (Choice == 4)
                 {
 
-                    NewBook.No_Of_Book_From_Catalogue = -0;
-                    NewBook.No_Of_Book_From_CatalogueL.Insert(0, NewBook.No_Of_Book_From_Catalogue);
-                    if (NewBook.No_Of_Book_From_Catalogue == NewBook.No_Of_Book_From_CatalogueL[0])
+
+                    NewBook.No_Of_Book_From_CatalogueL[i] = -0;
+                    if (NewBook.No_Of_Book_From_Catalogue != NewBook.No_Of_Book_From_CatalogueL[0])
                     {
                         Console.BackgroundColor = ConsoleColor.DarkGreen;
                         Console.ForegroundColor = ConsoleColor.White;
@@ -1294,10 +1290,8 @@
                 }
                 else if (Choice == 5)
                 {
-
-                    NewBook.Year_Of_Publishing = 9999;
-                    NewBook.Year_Of_PublishingL.Insert(0, NewBook.Year_Of_Publishing);
-                    if (NewBook.Year_Of_Publishing == NewBook.Year_Of_PublishingL[0])
+                    NewBook.Year_Of_PublishingL[0] = 9999;
+                    if (NewBook.Year_Of_Publishing != NewBook.Year_Of_PublishingL[0])
                     {
                         Console.BackgroundColor = ConsoleColor.DarkGreen;
                         Console.ForegroundColor = ConsoleColor.White;
@@ -1355,9 +1349,8 @@
                 }
                 else if (Choice == 6)
                 {
-                    NewBook.Genre = "";
-                    NewBook.GenreL.Insert(0, NewBook.Genre);
-                    if (NewBook.Genre == NewBook.GenreL[0])
+                    NewBook.GenreL[i] = "";
+                    if (NewBook.Genre != NewBook.GenreL[0])
                     {
                         Console.BackgroundColor = ConsoleColor.DarkGreen;
                         Console.ForegroundColor = ConsoleColor.White;
@@ -1416,17 +1409,17 @@
                 else if (Choice == 7)
                 {
                     NewBook.Year_Of_Publishing = 9999;
-                    NewBook.Year_Of_PublishingL.Insert(0, NewBook.Year_Of_Publishing);
-                    NewBook.No_Of_Book_From_Catalogue = -0;
-                    NewBook.No_Of_Book_From_CatalogueL.Insert(0, NewBook.No_Of_Book_From_Catalogue);
+                    NewBook.Year_Of_PublishingL[0] = NewBook.Year_Of_Publishing;
+                    NewBook.No_Of_Book_From_Catalogue = 0;
+                    NewBook.No_Of_Book_From_CatalogueL[0] = NewBook.No_Of_Book_From_Catalogue;
                     NewBook.Publishing_House = "";
-                    NewBook.Publishing_HousesL.Insert(0, NewBook.Publishing_House);
+                    NewBook.Publishing_HousesL[0] = NewBook.Publishing_House;
                     NewBook.Author = "";
-                    NewBook.AuthorsL.Insert(0, NewBook.Author);
-                    NewBook.Book_Name = "";//
-                    NewBook.BookNamesL.Insert(0, NewBook.Book_Name);
+                    NewBook.AuthorsL[0] = NewBook.Author;
+                    NewBook.Book_Name = "";
+                    NewBook.BookNamesL[0] = NewBook.Book_Name;
                     NewBook.Genre = "";
-                    NewBook.GenreL.Insert(0, NewBook.Genre);
+                    NewBook.GenreL[0] = NewBook.Genre;
                     if (NewBook.Genre == NewBook.GenreL[0])
                     {
                         Console.BackgroundColor = ConsoleColor.DarkGreen;
@@ -1503,7 +1496,7 @@
                 }
 
             }
-        }
+        } 
 
         static void SortBook()
         {
